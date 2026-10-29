@@ -1,0 +1,25 @@
+{
+  "name": "easycliper",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local-first video & GIF clipper that runs entirely in your browser (ffmpeg.wasm).",
+  "license": "GPL-3.0-or-later",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/copy-ffmpeg-core.mjs",
+    "dev": "node scripts/copy-ffmpeg-core.mjs && vite",
+    "build": "node scripts/copy-ffmpeg-core.mjs && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "0.12.10",
+    "@ffmpeg/ffmpeg": "0.12.15",
+    "fflate": "0.8.3",
+    "libheif-js": "1.23.5"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "8.3.5"
+  }
+}
